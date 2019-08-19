@@ -1,0 +1,19 @@
+{
+  "name": "pulserv",
+  "version": "1.0.0",
+  "description": "Pulsarc's endpoint for online interactions",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PulsarcGame/Pulserv.git"
+  },
+  "author": "PulsarcGame",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/PulsarcGame/Pulserv/issues"
+  },
+  "homepage": "https://github.com/PulsarcGame/Pulserv#readme"
+}
