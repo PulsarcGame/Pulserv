@@ -1,0 +1,10 @@
+{
+    "database": {
+        "host": "rhythmgamers.net",
+        "port": 3306,
+        "login": "pulsarc",
+        "pass": "password",
+        "dbname": "pulsarc",
+        "dialect": "mariadb"
+      }
+}
