@@ -1,6 +1,6 @@
 import { Database } from "./data/database";
-import { Player } from "./data/tables/player";
-import { Map } from "./data/tables/map";
+import Player from "./data/tables/player";
+import Map from "./data/tables/map";
 
 class Server {
     private static db : Database;
