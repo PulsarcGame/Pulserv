@@ -1,6 +1,4 @@
 import { Database } from "./data/database";
-import Player from "./data/tables/player";
-import Map from "./data/tables/map";
 
 class Server {
     private static db : Database;
@@ -8,18 +6,16 @@ class Server {
     constructor() {
     }
     
-    public init() {
+    public async init() {
         Server.db = new Database();
+        //Server.db.modelize();
 
         console.log("Created DB");
 
-        Server.db.getUser(1).then( (user:Player) => {
-            console.log(user.id);
-        });
+        const user = await Server.db.getUser(1);
+        const map = await Server.db.getMap(1);
 
-        Server.db.getMap(1).then( (map:Map) => {
-            console.log(map.title);
-        });
+        console.log(user);
     }
 }
 
