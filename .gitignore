@@ -5,4 +5,4 @@ pulserv.json
 
 .vscode/
 
-*.js
+dist/

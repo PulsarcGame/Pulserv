@@ -1,5 +1,5 @@
 
-export class Player {
+export default class {
 
     public id: number;
     public username: string;

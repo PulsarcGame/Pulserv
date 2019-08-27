@@ -1,0 +1,28 @@
+{
+  "name": "Pulserv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/bluebird": "^3.5.27",
+    "@types/validator": "^10.11.3",
+    "mariadb": "^2.1.0",
+    "sequelize": "^5.15.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "tsc -p . && node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PulsarcGame/Pulserv.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PulsarcGame/Pulserv/issues"
+  },
+  "homepage": "https://github.com/PulsarcGame/Pulserv#readme"
+}

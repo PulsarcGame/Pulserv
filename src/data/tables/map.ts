@@ -1,5 +1,5 @@
 
-export class Map {
+export default class {
 
     public id: number;
     public set_id: number;

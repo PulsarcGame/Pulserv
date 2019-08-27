@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import { ExecException } from "child_process";
-import { Player } from './tables/player';
-import { Map } from "./tables/map";
+import Player from './tables/player';
+import Map from "./tables/map";
 
 export class Database {
     private static sequelize: Sequelize;
@@ -35,12 +35,12 @@ export class Database {
     }
 
     public async getUser(id : number) : Promise<Player> {
-        var user = (await Database.sequelize.query("SELECT * FROM player WHERE id = "+id))[0][0];
+        var user : Player = (<Array<Player>> (await Database.sequelize.query("SELECT * FROM player WHERE id = "+id))[0])[0];
         return new Player(user.id, user.username, user.mail);
     }
 
     public async getMap(id : number) : Promise<Map> {
-        var map = (await Database.sequelize.query("SELECT * FROM map WHERE id = "+id))[0][0];
+        var map : Map = (<Array<Map>> (await Database.sequelize.query("SELECT * FROM map WHERE id = "+id))[0])[0];
         return new Map(map.id, map.set_id, map.title, map.artist, map.version, map.mapper, map.difficulty);
     }
 }
