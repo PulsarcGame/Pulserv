@@ -8,3 +8,9 @@
 ## Stack:
 
 - Flask + Mongoengine
+
+## To Run:
+
+```
+python3 run_web.py
+```
