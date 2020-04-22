@@ -1,4 +1,4 @@
-# Pulserv ~ A serverside platform for PulsArc.
+# Pulserv ~ A serverside platform for Pulsarc.
 
 ## Aims:
 - Map Database
