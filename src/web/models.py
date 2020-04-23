@@ -23,7 +23,7 @@ class Tag(mongoengine.Document):
 
 
 class Player(mongoengine.Document):
-    userName = mongoengine.StringField()
+    username = mongoengine.StringField()
     email = mongoengine.EmailField()  # Will need to perform additional validation on this.
     passwordHash = mongoengine.StringField()
 
