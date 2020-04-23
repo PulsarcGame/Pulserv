@@ -1,4 +1,10 @@
 import mongoengine
+from werkzeug.security import generate_password_hash, check_password_hash
+from secrets import token_hex
+
+
+def tokenWrapper():
+    return token_hex(64)
 
 
 class Map(mongoengine.Document):
@@ -24,7 +30,13 @@ class Player(mongoengine.Document):
     thirdPartyPlatformCredentials = mongoengine.DictField()  # Storing OAuth keys, etc.
 
     def setPassword(self, password):
-        pass
+        self.passwordHash = generate_password_hash(password)
 
-    def checkPassword(self, passwordHash):
-        pass
+    def checkPassword(self, password):
+        return check_password_hash(self.passwordHash, password)
+
+
+class AuthToken(mongoengine.Document):
+    key = mongoengine.StringField(max_length=128, default=tokenWrapper)
+    player = mongoengine.ReferenceField(Player, required=True)
+    scope = mongoengine.StringField(default="read")
