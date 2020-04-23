@@ -40,3 +40,13 @@ class AuthToken(mongoengine.Document):
     key = mongoengine.StringField(max_length=128, default=tokenWrapper)
     player = mongoengine.ReferenceField(Player, required=True)
     scope = mongoengine.StringField(default="read")
+
+    # A method for checking tokens...
+    # Returns False, or tokenObject.
+    @staticmethod
+    def checkToken(token=None):
+        tokenObject = AuthToken.objects.get(key=token)
+        if tokenObject is None:
+            return False
+        else:
+            return tokenObject
