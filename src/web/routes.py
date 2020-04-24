@@ -1,5 +1,5 @@
 from . import app
-from flask import redirect, request, abort
+from flask import redirect, request, abort, render_template
 from .. import database
 
 
@@ -9,6 +9,16 @@ from .. import database
 @app.route("/")
 def index():
     pass
+
+############################
+# Authentication Endpoints #
+############################
+@app.route("/register", methods=["GET", "POST"])
+def registerPlayer():
+    if request.method == "POST":
+        pass
+    else:
+        return render_template("register.html")
 
 
 ######################
