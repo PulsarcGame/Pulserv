@@ -1,24 +1,14 @@
-from . import app
-from flask import redirect, request, abort, render_template
-from .. import database
-
+from . import app, loginMan
+from flask import redirect, request, render_template, flash, Markup
+from flask_login import login_required
+from ..mapProcessor import unpacker
 
 ################################
 # Basic Routes for Webpage bit #
 ################################
 @app.route("/")
 def index():
-    pass
-
-############################
-# Authentication Endpoints #
-############################
-@app.route("/register", methods=["GET", "POST"])
-def registerPlayer():
-    if request.method == "POST":
-        pass
-    else:
-        return render_template("register.html")
+    return render_template("index.html")
 
 
 ######################
@@ -29,9 +19,15 @@ def listMaps():
     return redirect("/map/list")
 
 
-@app.route("/map/create")
-def createMap():
-    pass
+@app.route("/map/upload", methods=["GET", "POST"])
+def uploadMap():
+    if request.method == "POST":
+        uploadedMap = request.files["map"]
+        MapPackage = unpacker.MapPackage(uploadedMap.read())
+        print(MapPackage.raw)
+        return str(MapPackage.raw)
+    else:
+        return render_template("upload.html")
 
 
 @app.route("/map/view")
@@ -40,11 +36,13 @@ def viewMap():
 
 
 @app.route("/map/edit")
+@login_required
 def editMap():
     pass
 
 
 @app.route("/map/delete")
+@login_required
 def deleteMap():
     pass
 

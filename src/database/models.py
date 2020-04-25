@@ -1,5 +1,6 @@
 import mongoengine
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 from secrets import token_hex
 
 
@@ -22,7 +23,7 @@ class Tag(mongoengine.Document):
     filterable = mongoengine.BooleanField()
 
 
-class Player(mongoengine.Document):
+class Player(mongoengine.Document, UserMixin):
     username = mongoengine.StringField()
     email = mongoengine.EmailField()  # Will need to perform additional validation on this.
     passwordHash = mongoengine.StringField()
