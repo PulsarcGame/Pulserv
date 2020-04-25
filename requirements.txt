@@ -1,2 +1,4 @@
 flask
+flask-login
 mongoengine
+email-validator
