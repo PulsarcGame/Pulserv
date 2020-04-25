@@ -13,6 +13,8 @@
 
 ```
 python3 run_web.py
+# or
+python3 run_api.py
 ```
 
 ## More Details:
@@ -25,5 +27,17 @@ There will be three major platforms supported by the server
   - Online, browsable catalog (Highest Priority)
   - Ingame, API powered catalog (Still high priority)
   - PulseMan, A package manager, used for development, testing, and potentially baked into the PulseArc game.
-  
- 
+
+## Stuff to know about:
+
+The web server will allow uploads of .psm files via the /map/upload endpoint, this will be matched by the api server.
+Upon a .psm upload, the file is unzipped, if it fails the endpoint returns an error of "invalid mapfile"
+The unzipping occurs via the __init__ method of the MapPackage class
+Each unzipped file's raw bytes are passed into their own respective instances of beatMap, beatAudio, and backgoundImage
+Which then perform their own processing via their own __init__ methods.
+They then store their respective meta as instance properties.
+
+The upload endpoint then builds a mapStore object with metadata from the generated MapPackage object
+and stores the raw in a FileField on that object.
+
+The mapStore object is then saved to mongoDB.
