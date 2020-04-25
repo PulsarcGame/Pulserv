@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>PulseArc ~ An Omnidirectional Rhythm Game</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+         {% for message in messages %}
+            {{ message }}
+         {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <h1>PulseArc ~ An Omnidirectional Rhythm Game</h1>
+    <p>
+      Due to the slow development and lack of bugfixes for the game Intralism, we have decided to keep the game we love alive...
+      PulseArc is an open source community driven project that is always looking for more help.
+    </p>
+    <h2>Skills we need </h2>
+    <ul>
+        <li>Python Developers with experience working with REST, the requests library, flask, and mongoengine.</li>
+        <li>Python Developers with experience in command line applications, we use the library 'click' for PulseMan, a package manager for beatmaps</li>
+        <li>C# Developers with experience in games design</li>
+        <li>C# Developers with understanding of authentication, security, and web requests/REST APIs</li>
+    </ul>
+    <h2>Links</h2>
+    <ul>
+        <li><a href="https://github.com/PulsarcGame/Pulsarc">Github</a></li>
+        <li><a href="https://discord.gg/nhtSxb5">Discord</a></li>
+    </ul>
+  </body>
+</html>
