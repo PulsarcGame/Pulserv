@@ -1,5 +1,7 @@
 # Pulserv ~ A serverside platform for Pulsarc.
+## The Pulsarc Project is currently pretty much inactive, if someone picks it back up I'll bring this back. - vyrzdev
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Aims:
 - Map Database
 - Nice pretty project website
